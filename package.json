@@ -1,0 +1,42 @@
+{
+  "name": "jsonkeys",
+  "version": "0.0.1",
+  "description": "Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a dot",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "test": "sudo npm i -g && jsonkeys",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "bin": {
+    "jsonkeys": "./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDevelopGuy/jsonkeys.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheDevelopGuy/jsonkeys/issues"
+  },
+  "homepage": "https://github.com/TheDevelopGuy/jsonkeys",
+  "author": "Guy Chabra",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "3.0.0",
+    "clear": "0.1.0",
+    "commander": "4.0.1",
+    "figlet": "1.2.4",
+    "moment": "2.24.0",
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "@types/clear": "0.1.0",
+    "@types/figlet": "1.2.0",
+    "@types/node": "12.12.11",
+    "nodemon": "2.0.0",
+    "ts-node": "8.5.2",
+    "typescript": "3.7.2"
+  }
+}
