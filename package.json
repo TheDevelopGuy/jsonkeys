@@ -1,7 +1,7 @@
 {
   "name": "jsonkeys",
-  "version": "0.0.2",
-  "description": "Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a dot",
+  "version": "0.0.3",
+  "description": "Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a specified delimiter.",
   "main": "./lib/index.js",
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "json",
-    "json-keys"
+    "json-keys",
+    "i18next"
   ],
   "repository": {
     "type": "git",

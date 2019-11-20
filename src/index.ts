@@ -23,9 +23,9 @@ console.log(
 );
 
 program
-    .version('0.0.1')
-    .description("Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a dot.")
-    .option('-c, --config <file>', 'config input file')
+    .version('0.0.3')
+    .description("Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a specified delimiter.")
+    .option('-c, --config <file>', 'config input file (required)')
     .option('-w, --watch', 'watch changes in the input file')
     .parse(process.argv);
 
@@ -46,6 +46,7 @@ try {
 
 config.destinationFile = config.destinationFile || 'jsonkeys.ts';
 config.constantName = config.constantName || 'JsonKeys';
+config.delimiter = config.delimiter || '.';
 
 try{
     ValidateConfig(config);
@@ -57,7 +58,8 @@ try{
 Transformer(
     config.inputFile,
     config.destinationFile,
-    config.constantName
+    config.constantName,
+    config.delimiter
 );
 
 if(program.watch) {
@@ -66,7 +68,8 @@ if(program.watch) {
         Transformer(
             config.inputFile,
             config.destinationFile,
-            config.constantName
+            config.constantName,
+            config.delimiter
         )
     });
 }

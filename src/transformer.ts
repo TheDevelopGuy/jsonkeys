@@ -4,15 +4,16 @@ const fs = require('fs');
 export function Transformer(
     src: string,
     destination: string,
-    constantName: string
+    constantName: string,
+    delimiter: string
 ) {
     const data = fs.readFileSync(src);
     const trans = JSON.parse(data);
 
     const iterate = (obj: any, keyPrefix = '') => {
         Object.keys(obj).forEach((key) => {
-            obj[key] = typeof obj[key] === "string" ? `${keyPrefix ? keyPrefix + '.' : ''}${key}` : {
-                ...iterate(obj[key], keyPrefix ? `${keyPrefix}.${key}` : key)
+            obj[key] = typeof obj[key] === "string" ? `${keyPrefix ? keyPrefix + delimiter : ''}${key}` : {
+                ...iterate(obj[key], keyPrefix ? `${keyPrefix}${delimiter}${key}` : key)
             }
         });
         return obj;
