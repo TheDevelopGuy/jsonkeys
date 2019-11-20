@@ -1,6 +1,6 @@
 {
   "name": "jsonkeys",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a dot",
   "main": "./lib/index.js",
   "scripts": {
