@@ -1,5 +1,5 @@
 # JsonKeys
-Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a specified delimiter.
+Transform a JSON file to a javascript object, where the keys are the same and each value is the order of the keys joined by a specified delimiter.
 
 This package is very useful when using libraries like i18next or other javascript internationalization-framework to avoid the use of "magic strings".
 
