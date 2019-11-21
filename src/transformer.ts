@@ -21,7 +21,7 @@ export function Transformer(
 
     iterate(jparse);
 
-    const transKeysFile = `const ${constantName} = ${JSON.stringify(jparse)}; export default ${constantName};`;
-    fs.writeFileSync(destination, transKeysFile);
+    const jsonKeysFile = `const ${constantName} = ${JSON.stringify(jparse)}; export default ${constantName};`;
+    fs.writeFileSync(destination, jsonKeysFile);
     console.log(`[${moment().format('HH:mm:ss')}] New json keys file was written at '${destination}', constant import name is ${constantName}.`)
 }
