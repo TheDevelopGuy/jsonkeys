@@ -1,7 +1,7 @@
 # JsonKeys
 Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a specified delimiter.
 
-This package is very useful when using libraries like i18next or other javascript internationalization-framework to avoid the use of "magic strings"
+This package is very useful when using libraries like i18next or other javascript internationalization-framework to avoid the use of "magic strings".
 
 ## Example
 Input
@@ -40,7 +40,7 @@ export default JsonKeys;
 npm install --save-dev jsonkeys
 ```
 
-### 2. Create config file
+### 2. Create a config file
 ```json
 {
     "inputFile": "src/assets/i18n/en.json",
