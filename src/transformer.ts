@@ -8,7 +8,7 @@ export function Transformer(
     delimiter: string
 ) {
     const data = fs.readFileSync(src);
-    const trans = JSON.parse(data);
+    const jparse = JSON.parse(data);
 
     const iterate = (obj: any, keyPrefix = '') => {
         Object.keys(obj).forEach((key) => {
@@ -19,9 +19,9 @@ export function Transformer(
         return obj;
     };
 
-    iterate(trans);
+    iterate(jparse);
 
-    const transKeysFile = `const ${constantName} = ${JSON.stringify(trans)}; export default ${constantName};`;
+    const transKeysFile = `const ${constantName} = ${JSON.stringify(jparse)}; export default ${constantName};`;
     fs.writeFileSync(destination, transKeysFile);
-    console.log(`[${moment().format('HH:mm:ss')}] New translation keys file was written at '${destination}', constant import name is ${constantName}.`)
+    console.log(`[${moment().format('HH:mm:ss')}] New json keys file was written at '${destination}', constant import name is ${constantName}.`)
 }

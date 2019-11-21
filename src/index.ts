@@ -23,7 +23,7 @@ console.log(
 );
 
 program
-    .version('0.0.3')
+    .version('0.0.4')
     .description("Transform a JSON file to a javascript object, where the keys are the same and each value is the keys order joined by a specified delimiter.")
     .option('-c, --config <file>', 'config input file (required)')
     .option('-w, --watch', 'watch changes in the input file')
