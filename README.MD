@@ -31,7 +31,29 @@ const JsonKeys = {
 };
 export default JsonKeys;
 ```
+React Example
 
+```jsx
+// The 'magic strings' way
+return (
+      <h1>{t('HOME_PAGE.TITLE')}</h1>
+)
+
+// The alternative way (using JsonKeys)
+return (
+      <h1>{t(TransKeys.HOME_PAGE.TITLE)}</h1>
+)
+```
+
+Angular Example
+
+```html
+<!-- The 'magic strings' way -->
+<h1>{{'HOME_PAGE.TITLE' | i18next}}</h1>
+
+<!-- The alternative way (using JsonKeys) -->
+<h1>{{TransKeys.HOME_PAGE.TITLE | i18next}}</h1>
+```
 
 ## How to
 
